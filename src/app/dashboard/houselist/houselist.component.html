@@ -1,0 +1,57 @@
+<h1>Berlin</h1>
+
+<ng-scrollbar #scrollable
+              [trackX]="true"
+              [shown]="true"
+              [disableOnBreakpoints]="false">
+  <div class="container">
+    <div class="card mat-elevation-z4"
+         *ngFor="let property of properties;let i=index">
+      <!-- <div class="card-quickaction-right">
+      <mat-icon>
+        share
+      </mat-icon>
+    </div> -->
+      <div *ngIf="property.productType.displayName === 'L'"
+           class="card-quickaction-left">
+        <button matTooltip="This property is comapratevely expensive" mat-flat-button
+                color="primary">
+          HQ L
+        </button>
+      </div>
+      <div class="card-image">
+        <img [src]="'./assets/images/home ('+i+').jpg'" />
+      </div>
+      <div class="card-details">
+
+        <div class="card-title">
+          <p>
+            {{property.title}}
+          </p>
+        </div>
+        <div class="card-main-details">
+          <div>
+            {{property.priceForTotalArea}}
+          </div>
+          <div>
+            {{property.floorSpace}}
+          </div>
+        </div>
+        <div class="card-tray">
+          <div [matTooltip]="property.relator.name"
+               class="avatar">
+            <img [src]="'./assets/avatar/'+property.id+'.png'" />
+          </div>
+          <!-- <div class="icon-tray">
+          <mat-icon matTooltip="View place on map">
+            location_on
+          </mat-icon>
+          <mat-icon matTooltip="Add to favorites" >
+            favorite_border
+          </mat-icon>
+        </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-scrollbar>
