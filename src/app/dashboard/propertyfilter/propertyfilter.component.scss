@@ -1,0 +1,89 @@
+@import "../../styles/devices/device";
+
+$primary: #720d5d;
+$text-color1: rgba(0, 0, 0, 0.87);
+$header-font-size-desk: 1vw;
+.filter-container {
+  padding: 0.7vw;
+  width: 13vw;
+  height: 89vw;
+  min-height: 56vw;
+  margin-top: 3.5vw;
+  color: $text-color1;
+  border-top: 3px solid $primary;
+
+  @include media-breakpoint-down(sm) {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    z-index: 5;
+    height: 100%;
+    display: block;
+    top: 0;
+    background: white;
+    padding: 8%;
+    border: none;
+  }
+  .filter-static-header {
+    font-size: $header-font-size-desk;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    @include media-breakpoint-down(sm) {
+      font-size: 4vw;
+      line-height: 3vw;
+    }
+  }
+  .filter-header {
+    margin: 1.4vw 1.4vw 0 0;
+    font-size: $header-font-size-desk;
+    font-weight: 400;
+    line-height: 1.6vw;
+    @include media-breakpoint-down(sm) {
+      font-size: 3vw;
+      font-weight: 400;
+      line-height: 8.6vw;
+    }
+  }
+  li {
+    line-height: 1.6vw;
+    list-style: none;
+  }
+  .filter-options {
+    margin: 0.7vw 0 0 0;
+  }
+  mat-checkbox {
+    font-size: 0.8vw;
+    font-weight: 400;
+    line-height: 1.6vw;
+    @include media-breakpoint-down(sm) {
+      line-height: 6.6vw;
+      font-size: 3vw;
+    }
+  }
+  .mat-checkbox-inner-container {
+    height: 1vw;
+    width: 1vw;
+  }
+  mat-icon {
+    vertical-align: sub;
+  }
+  .view-list {
+    display: none;
+    justify-content: center;
+    margin: 2vw;
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
+}
+
+:host.is-open {
+  display: block;
+}
+
+:host {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}

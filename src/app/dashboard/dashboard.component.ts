@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styles: [`
-  .dashboard-container{
-    align-items:stretch;
-  }
-  `]
+  template:`
+    <ng-scrollbar [shown]="'always'">
+  <div class="dashboard-container flex-row flex-space-between">
+  <div>
+    <app-propertyfilter></app-propertyfilter>
+  </div>
+  <div>
+    <app-propertylist></app-propertylist>
+  </div>
+  <div>
+    <app-propertystatistics></app-propertystatistics>
+  </div>
+</div>
+<ng-scrollbar>
+`,
+  styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class DashboardComponent {
 }

@@ -2,6 +2,7 @@ import { RealTor } from './realtor';
 import { Feature } from './feature';
 import { City } from './city';
 import { ProductCategory } from './productcategory';
+import { CommercializationType } from './commercialization';
 export class Property {
     constructor(
         id: number,
@@ -14,7 +15,7 @@ export class Property {
         productType: ProductCategory,
         floorSpace: string,
         priceForTotalArea: string,
-        commercializationType: string
+        commercializationType: CommercializationType
     ) {
 
         this.id = id;
@@ -29,7 +30,7 @@ export class Property {
         this.priceForTotalArea = priceForTotalArea;
         this.commercializationType = commercializationType;
     }
-
+    /* */
     id: number;
     address: string;
     city: City;
@@ -40,5 +41,5 @@ export class Property {
     priceForTotalArea: string;
     productType: ProductCategory;
     floorSpace: string;
-    commercializationType: string;
+    commercializationType: CommercializationType;
 }

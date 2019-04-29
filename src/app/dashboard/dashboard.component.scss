@@ -1,0 +1,10 @@
+@import "../styles/flex/flex";
+@import "../styles/devices/device";
+.dashboard-container{
+    align-items:stretch;
+    @include media-breakpoint-down(sm) {
+     display: flex;
+     flex-direction: column-reverse;
+     overflow: scroll;
+    }
+  }

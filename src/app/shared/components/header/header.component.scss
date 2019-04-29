@@ -1,4 +1,11 @@
+@import "../../../styles/devices/device";
 .mat-toolbar {
   background: #720d5d;
   color: white;
+}
+.filter-button{
+  display: none;
+  @include media-breakpoint-down(sm) {
+    display: block;
+   }
 }

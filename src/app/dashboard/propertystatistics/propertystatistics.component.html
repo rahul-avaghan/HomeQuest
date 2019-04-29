@@ -1,0 +1,18 @@
+<div class="graph-container">
+  <h1 class="statistics-header"> Statistics</h1>
+  <ngx-charts-pie-chart *ngIf="chartData.length > 0"
+    [arcWidth]="20"
+    [legendPosition]="'bottom'"
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="chartData"
+    [legend]="true"
+    [legendTitle]="'Properties grouped by city post code'"
+    [explodeSlices]="false"
+    [labels]="true"
+    [doughnut]="false">
+  </ngx-charts-pie-chart>
+  <h3 *ngIf="chartData.length === 0">
+    No information available.
+  </h3>
+</div>

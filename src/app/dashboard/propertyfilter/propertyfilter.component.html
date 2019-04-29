@@ -1,0 +1,59 @@
+<div class="filter-container mat-elevation-z4">
+  <div class="filter-static-header flex-row flex-space-between">
+    <div>
+      Filters
+    </div>
+    <mat-icon>
+      filter_list
+    </mat-icon>
+  </div>
+
+
+  <div class="filter-header">
+    <mat-icon>
+      monetization_on
+    </mat-icon>
+    <span> Commercialization</span>
+  </div>
+  <div class="filter-options">
+    <!-- <li *ngFor="let commercialization of commercializationTypes;">
+        <mat-checkbox (change)="applyCommercializationFilter(commercialization)"
+          [(ngModel)]="commercialization.selected">{{commercialization.displayName}}</mat-checkbox>
+      </li> -->
+    <mat-form-field>
+
+      <mat-select [(value)]="selectedCommercialization"
+        (selectionChange)="onFilterChange()"
+        [(ngModel)]="selectedCommercialization"
+        name="commercialization">
+        <mat-option *ngFor="let commercialization of commercializationTypes"
+          [value]="commercialization.key">
+          {{commercialization.displayName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="filter-header">
+    <mat-icon>
+      location_city
+    </mat-icon> <span>Facilities</span>
+  </div>
+  <div class="filter-options">
+    <li *ngFor="let feature of featureList;">
+      <mat-checkbox (change)="onFilterChange()"
+        [(ngModel)]="feature.selected">{{feature.displayName}}</mat-checkbox>
+    </li>
+  </div>
+
+
+
+
+
+
+  <button mat-raised-button
+    color="primary"
+    class="view-list"
+    (click)="this.isOpen= false;">
+    {{this.numberOfProperties >0 ? 'View '+ this.numberOfProperties +' properties': 'No properties available'}}</button>
+</div>

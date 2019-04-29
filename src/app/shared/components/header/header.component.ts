@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { SideNavigationService } from '../../services/sidenavigation.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +7,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  constructor(private sideNavigationService: SideNavigationService) { }
+  toggleFilter() {
+    this.sideNavigationService.toggle();
+  }
+
+
 }

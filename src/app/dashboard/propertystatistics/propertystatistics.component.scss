@@ -1,0 +1,17 @@
+@import "../../styles/devices/device";
+.graph-container {
+  justify-content: center;
+  width:20vw;
+  height: 30vw;
+  .statistics-header {
+    font-size: 30px;
+    margin-left: 32px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: normal;
+  }
+   @include media-breakpoint-down(sm) {
+    //display: none;
+    width: 100%;
+    margin-bottom:60vh;//due to unusual behavior of plugin
+  }
+}

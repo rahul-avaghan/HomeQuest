@@ -1,13 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;overflow: hidden; }
-
-.flex-row{
-    display: flex;
-    flex-direction: row;
+@import "./src/app/styles/devices/device";
+html,
+body {
+  height: 100%;
 }
-.flex-space-between{
-    justify-content: space-between;
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow: hidden;
+}
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-space-between {
+  justify-content: space-between;
 }

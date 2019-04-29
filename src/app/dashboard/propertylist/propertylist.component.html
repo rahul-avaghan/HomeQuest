@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <h1>Berlin</h1>
+  <ng-scrollbar *ngIf="showscrollBar === true && properties.length > 0 "
+    [shown]="'always'"
+    [disableOnBreakpoints]="[breakpoints.Small,breakpoints.Handset,breakpoints.XSmall,breakpoints.Medium, breakpoints.HandsetPortrait]">
+    <div class="container">
+      <div class="card mat-elevation-z4"
+        *ngFor="let property of properties;let i=index">
+
+        <div class="card-quickaction-left"
+          *ngIf="property.productType.displayName === 'L'">
+          <button color="primary"
+            matTooltip="This property is comapratevely expensive"
+            mat-flat-button>
+            HQ L
+          </button>
+        </div>
+
+        <div class="card-image">
+          <img (mouseenter)="onMouseEnter(property.id)"
+            [src]="'./assets/images/home ('+i+').jpg'" />
+        </div>
+
+        <div class="card-details">
+          <div class="card-title">
+            <p>
+              {{property.title}}
+            </p>
+          </div>
+
+          <div class="card-main-details">
+            <div>
+              {{property.priceForTotalArea}}
+            </div>
+            <div>
+              {{property.floorSpace}}
+            </div>
+          </div>
+          <div class="card-tray">
+            <div class="avatar"
+              [matTooltip]="property.relator.name">
+              <img [src]="'./assets/avatar/'+property.id+'.png'" />
+            </div>
+            <div [className]="hoverId === property.id ?'icon-tray-visible': 'icon-tray'">
+              <mat-icon matTooltip="View place on map">
+                location_on
+              </mat-icon>
+              <mat-icon matTooltip="Add to favorites">
+                favorite_border
+              </mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-scrollbar>
+  <h3 *ngIf="properties.length ===0">No properties available for selected filters.</h3>
+</div>

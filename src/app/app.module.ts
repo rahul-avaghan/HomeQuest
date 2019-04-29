@@ -15,7 +15,8 @@ import { MaterialModule } from './material/material.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    SharedModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
